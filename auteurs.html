@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+
+  <!-- Permet au site de bien s’adapter aux téléphones -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Description utilisée par Google et les réseaux sociaux -->
+  <meta
+    name="description"
+    content="Éditions Spell It Out accompagne les auteur·rice·s neurodivergent·e·s dans leur parcours littéraire."
+  >
+
+  <title>Éditions Spell It Out :: AUTEURS</title>
+
+  <!-- Fichier CSS principal -->
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+
+<body>
+
+  <!--
+    Le contenu de components/header.html sera inséré ici
+    automatiquement par includes.js.
+  -->
+  <div data-include="components/header.html"></div>
+
+  <!-- Le contenu principal de l’accueil sera ajouté ici -->
+  <main id="main-content">
+
+<!--================================================
+      HERO
+    =================================================-->
+
+    <section class="hero-section authors-hero">
+
+      <div class="container hero-inner">
+
+        <div class="hero-content">
+
+          <h1 class="hero-title">
+            Nos auteurs et autrices
+          </h1>
+
+          <h2 class="hero-subtitle">
+            Des voix uniques.<br>
+            Des histoires qui méritent d'être lues.
+          </h2>
+
+          <div
+            class="section-divider"
+            aria-hidden="true"
+          >
+            <img
+              src="assets/images/divider-star.png"
+              alt=""
+            >
+          </div>
+
+          <p>
+            Nous croyons en la richesse des parcours,
+            des imaginaires et des expériences de chaque
+            auteur·rice.
+          </p>
+
+          <p>
+            Découvrez les personnes derrière les histoires.
+          </p>
+
+        </div>
+
+
+        <!-- Illustration -->
+        <div
+          class="authors-hero-visual"
+          aria-hidden="true"
+        ></div>
+
+      </div>
+
+    </section>
+
+
+    <!--================================================
+      LISTE DES AUTEURS
+    =================================================-->
+
+    <section class="authors-section">
+
+      <div class="container">
+
+        <header class="section-heading">
+
+          <h2>
+            Tous les auteur·rice·s
+          </h2>
+
+          <div
+            class="section-divider"
+            aria-hidden="true"
+          >
+            <img
+              src="assets/images/divider-star.png"
+              alt=""
+            >
+          </div>
+
+        </header>
+
+
+        <!--
+          Les cartes seront créées automatiquement
+          par authors-page.js
+        -->
+        <div
+          class="authors-grid"
+          id="authors-grid"
+        ></div>
+
+      </div>
+
+    </section>
+
+
+    <!--================================================
+      CTA
+    =================================================-->
+
+    <section class="authors-cta">
+
+      <div class="container authors-cta-inner">
+
+        <div class="authors-cta-content">
+
+          <h2>
+            Votre nom pourrait être ici.
+          </h2>
+
+          <div
+            class="section-divider"
+            aria-hidden="true"
+          >
+            <img
+              src="assets/images/divider-star.png"
+              alt=""
+            >
+          </div>
+
+          <p>
+            Si vous avez une histoire complète qui vous habite,
+            nous serions heureux de la découvrir.
+          </p>
+
+          <a
+            class="button button-primary"
+            href="soumettre.html"
+          >
+            Soumettre mon projet
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+
+
+  </main>
+  <div data-include="components/footer.html"></div>
+  <!--
+    Le script est placé à la fin du body pour laisser le HTML
+    se charger avant l’exécution du JavaScript.
+  -->
+<script src="js/includes.js"></script>
+  <script src="js/authors.js"></script>
+  <script src="js/authors-page.js"></script>
+  
+</body>
+
+</html>

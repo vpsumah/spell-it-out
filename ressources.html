@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Ressources | Éditions Spell It Out</title>
+
+  <link
+    rel="stylesheet"
+    href="./css/styles.css"
+  >
+
+</head>
+
+
+<body>
+
+  <div data-include="components/header.html"></div>
+
+
+  <main id="main-content">
+
+
+    <!--================================================
+      HERO
+    =================================================-->
+
+    <section class="resources-hero">
+
+      <div class="container resources-hero-grid">
+
+
+        <div class="resources-hero-content">
+
+          <h1>
+            Ressources
+          </h1>
+
+          <h2>
+            Articles et guides
+          </h2>
+
+          <div
+            class="section-divider"
+            aria-hidden="true"
+          >
+            <img
+              src="assets/images/divider-star.png"
+              alt=""
+            >
+          </div>
+
+          <p>
+            Des articles pour nourrir votre passion de l'écriture,
+            de la lecture et des histoires qui nous façonnent.
+          </p>
+
+        </div>
+
+
+        <div
+          class="resources-hero-image"
+          aria-hidden="true"
+        ></div>
+
+      </div>
+
+    </section>
+
+
+
+    <!--================================================
+      FILTRES
+    =================================================-->
+
+    <section class="resources-filter-band">
+
+      <div class="container resources-filter-inner">
+
+
+        <!-- Les filtres seront créés automatiquement -->
+        <div
+          class="resources-filters"
+          id="article-filters"
+        ></div>
+
+
+        <!-- Recherche -->
+        <div class="article-search">
+
+          <input
+            type="search"
+            id="article-search"
+            placeholder="Rechercher un article..."
+            aria-label="Rechercher un article"
+          >
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!--================================================
+      ARTICLES
+    =================================================-->
+
+    <section class="articles-section">
+
+      <div class="container">
+
+
+        <div
+          class="articles-grid"
+          id="articles-grid"
+        ></div>
+
+
+        <p
+          class="articles-empty"
+          id="articles-empty"
+          hidden
+        >
+          Aucun article ne correspond à cette recherche.
+        </p>
+
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+
+  <!--================================================
+    POPUP ARTICLE
+  =================================================-->
+
+  <div
+    class="article-modal"
+    id="article-modal"
+    aria-hidden="true"
+  >
+
+
+    <!-- Fond -->
+    <div
+      class="article-modal-overlay"
+      data-close-article
+    ></div>
+
+
+    <!-- Fenêtre -->
+    <div
+      class="article-modal-window"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="article-modal-title"
+    >
+
+
+      <button
+        class="article-modal-close"
+        type="button"
+        aria-label="Fermer l'article"
+        data-close-article
+      >
+        ×
+      </button>
+
+
+      <div class="article-modal-layout">
+
+
+        <!--================================================
+          ARTICLE
+        =================================================-->
+
+        <article class="article-modal-main">
+
+
+          <button
+            class="article-back"
+            type="button"
+            data-close-article
+          >
+            ← Tous les articles
+          </button>
+
+
+          <p
+            class="article-modal-category"
+            id="article-modal-category"
+          ></p>
+
+
+          <h1 id="article-modal-title"></h1>
+
+
+          <div
+            class="section-divider article-modal-divider"
+            aria-hidden="true"
+          >
+            <img
+              src="assets/images/divider-star.png"
+              alt=""
+            >
+          </div>
+
+
+          <p
+            class="article-modal-excerpt"
+            id="article-modal-excerpt"
+          ></p>
+
+
+          <div class="article-meta">
+
+            <span id="article-modal-reading"></span>
+
+            <span>•</span>
+
+            <span id="article-modal-date"></span>
+
+            <span>•</span>
+
+            <span id="article-modal-author"></span>
+
+          </div>
+
+
+          <img
+            class="article-modal-image"
+            id="article-modal-image"
+            src=""
+            alt=""
+          >
+
+
+          <div
+            class="article-introduction"
+            id="article-modal-introduction"
+          ></div>
+
+
+          <div
+            class="article-body"
+            id="article-modal-body"
+          ></div>
+
+
+        </article>
+
+
+
+        <!--================================================
+          SIDEBAR
+        =================================================-->
+
+        <aside class="article-sidebar">
+
+
+          <!-- Auteur -->
+          <div class="article-author-box">
+
+            <h2>
+              À propos de l'auteur·rice
+            </h2>
+
+            <div
+              class="section-divider"
+              aria-hidden="true"
+            >
+              <img
+                src="assets/images/divider-star.png"
+                alt=""
+              >
+            </div>
+
+
+            <img
+              class="article-author-image"
+              id="article-author-image"
+              src=""
+              alt=""
+            >
+
+
+            <h3 id="article-author-name"></h3>
+
+
+            <p
+              class="article-author-role"
+              id="article-author-role"
+            ></p>
+
+
+            <p
+              class="article-author-bio"
+              id="article-author-bio"
+            ></p>
+
+
+            <a
+              class="button button-primary"
+              id="article-author-link"
+              href="#"
+            >
+              Découvrir l'auteur·rice
+            </a>
+
+          </div>
+
+
+
+          <!-- Articles similaires -->
+          <div class="article-related-box">
+
+            <h2>
+              Dans la même catégorie
+            </h2>
+
+            <div
+              class="section-divider"
+              aria-hidden="true"
+            >
+              <img
+                src="assets/images/divider-star.png"
+                alt=""
+              >
+            </div>
+
+
+            <div
+              class="article-related-list"
+              id="article-related-list"
+            ></div>
+
+          </div>
+
+
+        </aside>
+
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+  <div data-include="components/footer.html"></div>
+
+
+  <!-- L'ordre est important -->
+  <script src="js/authors.js"></script>
+
+  <script src="js/articles.js"></script>
+
+  <script src="js/resources-page.js"></script>
+
+  <script src="js/includes.js"></script>
+
+
+</body>
+
+</html>

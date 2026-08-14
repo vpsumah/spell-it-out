@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Contact | Éditions Spell It Out</title>
+
+  <link
+    rel="stylesheet"
+    href="./css/styles.css"
+  >
+
+</head>
+
+
+<body>
+
+  <div data-include="components/header.html"></div>
+
+
+  <main id="main-content">
+
+
+    <!--================================================
+      HERO
+    =================================================-->
+
+    <section class="contact-hero">
+
+      <div class="container contact-hero-grid">
+
+
+        <!-- Texte -->
+
+        <div class="contact-hero-content">
+
+          <h1>
+            Contactez-nous
+          </h1>
+
+          <div
+            class="section-divider"
+            aria-hidden="true"
+          >
+            <img
+              src="assets/images/divider-star.png"
+              alt=""
+            >
+          </div>
+
+          <h2>
+            Nous sommes là<br>
+            pour vous écouter.
+          </h2>
+
+          <p>
+            Que vous ayez une question, un projet en tête
+            ou que vous souhaitiez simplement nous écrire,
+            notre équipe vous répondra avec attention.
+          </p>
+
+        </div>
+
+
+        <!-- Illustration -->
+
+        <div
+          class="contact-hero-image"
+          aria-hidden="true"
+        ></div>
+
+      </div>
+
+    </section>
+
+
+
+    <!--================================================
+      CONTACT
+    =================================================-->
+
+    <section class="contact-section">
+
+      <div class="container contact-grid">
+
+
+        <!--================================================
+          FORMULAIRE
+        =================================================-->
+
+        <div class="contact-form-wrapper">
+
+          <h2>
+            Envoyez-nous un message
+          </h2>
+
+          <div
+            class="section-divider"
+            aria-hidden="true"
+          >
+            <img
+              src="assets/images/divider-star.png"
+              alt=""
+            >
+          </div>
+
+          <p class="contact-form-intro">
+            Remplissez le formulaire ci-dessous et nous vous répondrons
+            dans les meilleurs délais.
+          </p>
+
+
+          <form
+            class="contact-form"
+            action="https://formspree.io/f/xqpzpgoz"
+            method="POST"
+          >
+
+
+            <!-- Type de formulaire -->
+
+            <input
+              type="hidden"
+              name="type_formulaire"
+              value="Formulaire de contact"
+            >
+
+
+            <input
+              type="hidden"
+              name="_subject"
+              value="Nouveau message - Contact Spell It Out"
+            >
+
+
+
+            <!-- Nom -->
+
+            <div class="form-field">
+
+              <label for="contact-name">
+                Nom complet <span>*</span>
+              </label>
+
+              <input
+                type="text"
+                id="contact-name"
+                name="nom"
+                autocomplete="name"
+                required
+              >
+
+            </div>
+
+
+
+            <!-- Courriel -->
+
+            <div class="form-field">
+
+              <label for="contact-email">
+                Courriel <span>*</span>
+              </label>
+
+              <input
+                type="email"
+                id="contact-email"
+                name="email"
+                autocomplete="email"
+                required
+              >
+
+            </div>
+
+
+
+            <!-- Sujet -->
+
+            <div class="form-field">
+
+              <label for="contact-subject">
+                Objet <span>*</span>
+              </label>
+
+              <select
+                id="contact-subject"
+                name="objet"
+                required
+              >
+
+                <option value="">
+                  Sélectionnez un sujet
+                </option>
+
+                <option value="Question générale">
+                  Question générale
+                </option>
+
+                <option value="Projet éditorial">
+                  Projet éditorial
+                </option>
+
+                <option value="Livre ou auteur">
+                  Livre ou auteur·rice
+                </option>
+
+                <option value="Presse ou collaboration">
+                  Presse ou collaboration
+                </option>
+
+                <option value="Problème avec le site">
+                  Problème avec le site
+                </option>
+
+                <option value="Autre">
+                  Autre
+                </option>
+
+              </select>
+
+            </div>
+
+
+
+            <!-- Message -->
+
+            <div class="form-field">
+
+              <label for="contact-message">
+                Votre message <span>*</span>
+              </label>
+
+              <textarea
+                id="contact-message"
+                name="message"
+                rows="8"
+                required
+              ></textarea>
+
+            </div>
+
+
+
+            <!-- Bouton -->
+
+            <button
+              type="submit"
+              class="button button-primary contact-submit"
+            >
+              Envoyer le message
+            </button>
+
+
+            <p class="contact-privacy">
+              Vos informations sont confidentielles et ne seront pas partagées.
+            </p>
+
+
+          </form>
+
+        </div>
+
+
+
+        <!--================================================
+          AUTRES FAÇONS DE NOUS JOINDRE
+        =================================================-->
+
+        <aside class="contact-info">
+
+          <h2>
+            Autres façons de nous joindre
+          </h2>
+
+
+          <div class="contact-methods">
+
+
+            <article class="contact-method">
+
+              <div class="contact-method-icon">
+                ✉
+              </div>
+
+              <div>
+
+                <h3>
+                  Courriel
+                </h3>
+
+                <a href="mailto:editions.spellitout@gmail.com">
+                  editions.spellitout@gmail.com
+                </a>
+
+                <p>
+                  Pour les questions générales.
+                </p>
+
+              </div>
+
+            </article>
+
+
+
+            <article class="contact-method">
+
+              <div class="contact-method-icon">
+                ✦
+              </div>
+
+              <div>
+
+                <h3>
+                  Soumission de projet
+                </h3>
+
+                <p>
+                  Pour nous présenter un projet,
+                  utilisez directement notre formulaire de soumission.
+                </p>
+
+                <a href="soumettre.html">
+                  Soumettre un projet
+                </a>
+
+              </div>
+
+            </article>
+
+
+
+            <article class="contact-method">
+
+              <div class="contact-method-icon">
+                ◎
+              </div>
+
+              <div>
+
+                <h3>
+                  Réseaux sociaux
+                </h3>
+
+                <p>
+                  Suivez-nous pour découvrir les nouveaux livres,
+                  auteur·rice·s et actualités de la maison.
+                </p>
+
+                <div class="contact-socials">
+
+                  <a
+                    href="https://www.facebook.com/profile.php?id=100092354926935"
+                    aria-label="Facebook"
+                  >
+                    Facebook
+                  </a>
+
+                 <!-----<a
+                    href="#"
+                    aria-label="Instagram"
+                  >
+                    Instagram
+                  </a>-----> 
+
+                </div>
+
+              </div>
+
+            </article>
+
+
+
+            <article class="contact-method">
+
+              <div class="contact-method-icon">
+                ◇
+              </div>
+
+              <div>
+
+                <h3>
+                  Bellechasse, Québec
+                </h3>
+
+                <p>
+                  Maison d'édition indépendante
+                  basée au Québec.
+                </p>
+
+              </div>
+
+            </article>
+
+          </div>
+
+
+          <!-- Petit message -->
+
+          <div class="contact-note">
+
+            <h3>
+              Nous lire, c'est nous soutenir.
+            </h3>
+
+            <p>
+              Chaque livre découvert, partagé ou recommandé
+              aide une nouvelle voix à trouver sa place.
+            </p>
+
+            <p>
+              Merci de faire partie de notre univers.
+            </p>
+
+          </div>
+
+        </aside>
+
+      </div>
+
+    </section>
+
+
+
+    <!--================================================
+      FAQ
+    =================================================-->
+
+    <section class="contact-faq">
+
+      <div class="container contact-faq-inner">
+
+        <header class="section-heading">
+
+          <h2>
+            Questions fréquentes
+          </h2>
+
+          <div
+            class="section-divider"
+            aria-hidden="true"
+          >
+            <img
+              src="assets/images/divider-star.png"
+              alt=""
+            >
+          </div>
+
+        </header>
+
+
+        <div class="faq-list">
+
+
+          <details class="faq-item">
+
+            <summary>
+              Quels types de projets publiez-vous?
+            </summary>
+
+            <p>
+              Nous considérons une grande variété de projets:
+              romans, nouvelles, poésie, essais, guides pratiques,
+              ouvrages éducatifs, témoignages et projets plus difficiles
+              à classer.
+            </p>
+
+          </details>
+
+
+          <details class="faq-item">
+
+            <summary>
+              Comment puis-je soumettre un projet?
+            </summary>
+
+            <p>
+              Utilisez notre page «Soumettre un projet».
+              Nous demandons d'abord une présentation complète de votre
+              projet plutôt que votre manuscrit.
+            </p>
+
+          </details>
+
+
+          <details class="faq-item">
+
+            <summary>
+              Combien de temps prend le processus d'édition?
+            </summary>
+
+            <p>
+              Cela dépend du projet, de son état au moment de la sélection
+              et du travail éditorial nécessaire. Les échéanciers sont
+              établis avec l'auteur·rice lorsque le projet est accepté.
+            </p>
+
+          </details>
+
+
+          <details class="faq-item">
+
+            <summary>
+              Acceptez-vous les nouveaux auteur·rice·s?
+            </summary>
+
+            <p>
+              Oui. La notoriété d'un auteur ou d'une autrice n'est pas
+              un critère nécessaire pour nous présenter un projet.
+            </p>
+
+          </details>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+  </main>
+
+
+  <div data-include="components/footer.html"></div>
+
+
+  <script src="js/includes.js"></script>
+
+</body>
+
+</html>

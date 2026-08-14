@@ -1,0 +1,64 @@
+/*==================================================
+  REMISE À ZÉRO DE BASE
+==================================================*/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box; /* Inclut les bordures dans les dimensions */
+}
+
+
+html {
+  scroll-behavior: smooth; /* Rend les déplacements internes plus fluides */
+}
+
+
+body {
+  margin: 0; /* Retire la marge ajoutée automatiquement par le navigateur */
+  background: var(--color-background); /* Fond général du site */
+}
+
+
+img,
+svg {
+  max-width: 100%; /* Empêche les images de dépasser leur conteneur */
+}
+
+
+img {
+  display: block; /* Retire le petit espace sous les images */
+}
+
+
+/*==================================================
+  CONTENEUR PRINCIPAL
+==================================================*/
+
+.container {
+  width: min(
+    var(--container-width),
+    calc(100% - (var(--page-padding) * 2))
+  ); /* Garde une marge de chaque côté */
+
+  margin-inline: auto; /* Centre le contenu horizontalement */
+}
+
+
+/*==================================================
+  CONTENU PRINCIPAL
+==================================================*/
+
+#main-content {
+  min-height: 20vh; /* Garde un petit espace même lorsque la page est vide */
+}
+
+
+/* Message affiché lorsqu’un include ne fonctionne pas */
+.include-error {
+  margin: 0;
+  padding: 1rem;
+  text-align: center;
+  color: #8a1f1f;
+  background: #f7dddd;
+}

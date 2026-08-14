@@ -1,0 +1,13 @@
+/* Variables globales : couleurs, dimensions et espacements */
+@import url("variables.css");
+
+/* Polices, titres, paragraphes et liens */
+@import url("typography.css");
+
+/* Conteneurs et organisation générale des pages */
+@import url("layout.css");
+
+/* Header, footer, boutons, cartes et autres composants */
+@import url("components.css");
+
+@import url("./sections.css");

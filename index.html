@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+
+  <!-- Permet au site de bien s’adapter aux téléphones -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Description utilisée par Google et les réseaux sociaux -->
+  <meta
+    name="description"
+    content="Éditions Spell It Out accompagne les auteur·rice·s neurodivergent·e·s dans leur parcours littéraire."
+  >
+
+  <title>Éditions Spell It Out</title>
+
+  <!-- Fichier CSS principal -->
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+
+<body>
+
+  <!--
+    Le contenu de components/header.html sera inséré ici
+    automatiquement par includes.js.
+  -->
+  <div data-include="components/header.html"></div>
+
+  <!-- Le contenu principal de l’accueil sera ajouté ici -->
+  <main id="main-content">
+
+<section class="hero-section">
+  <div class="container hero-inner">
+
+    <!-- Texte principal du hero -->
+    <div class="hero-content">
+
+      <h1 class="hero-title">
+        <span>Les histoires</span>
+        <span>changent le monde.</span>
+
+        <span class="hero-title-accent">
+          Les bonnes histoires
+        </span>
+
+        <span class="hero-title-accent">
+          changent les personnes.
+        </span>
+      </h1>
+
+      <!-- Petite décoration sous le titre -->
+      <div class="section-divider" aria-hidden="true">
+  <img
+    src="assets/images/divider-star.png"
+    alt=""
+  >
+</div>
+
+      <a class="button button-primary" href="a-propos.html">
+        Découvrir notre univers
+      </a>
+
+    </div>
+
+    <!-- L’image sera ajoutée ici plus tard -->
+    <div class="hero-visual" aria-hidden="true"></div>
+
+  </div>
+</section>
+
+<section class="feature-band">
+
+    <div class="container feature-grid">
+
+        <article class="feature-item">
+
+            <img src="assets/images/icons/independante.png" alt="">
+
+            <h3>Indépendante</h3>
+
+            <p>
+                Une maison d'édition à taille humaine,
+                guidée par des valeurs sincères.
+            </p>
+
+        </article>
+
+        <article class="feature-item">
+
+            <img src="assets/images/icons/inclusive.png" alt="">
+
+            <h3>Inclusive</h3>
+
+            <p>
+                Nous accueillons les auteur·rice·s de tous horizons et croyons qu'une diversité de parcours enrichit la littérature.
+            </p>
+
+        </article>
+
+        <article class="feature-item">
+
+            <img src="assets/images/icons/creative.png" alt="">
+
+            <h3>Créative</h3>
+
+            <p>
+                Nous publions des histoires qui méritent d'être racontées, peu importe leur genre ou les conventions qu'elles choisissent de bousculer.
+            </p>
+
+        </article>
+
+        <article class="feature-item">
+
+            <img src="assets/images/icons/engagee.png" alt="">
+
+            <h3>Engagée</h3>
+
+            <p>
+                Nous croyons que les nouvelles voix méritent une vraie chance d'être entendues.
+            </p>
+
+        </article>
+
+    </div>
+
+</section>
+
+<section class="new-releases">
+
+    <div class="container">
+
+        <header class="section-heading">
+
+            <h2>Nouveauté</h2>
+
+         <div class="section-divider" aria-hidden="true">
+  <img
+    src="assets/images/divider-star.png"
+    alt=""
+  >
+</div>
+
+        </header>
+
+        <div class="books-grid">
+
+            <article class="book-card">
+
+  <button
+    class="book-card-button"
+    type="button"
+    data-book-id="sword"
+    aria-label="Voir les informations sur SWORD"
+  >
+
+    <img
+      src="assets/images/books/sword.png"
+      alt="Couverture du livre SWORD"
+    >
+
+  </button>
+
+  <h3>SWORD</h3>
+
+  <p class="book-author">
+    VP Sumah  </p>
+
+</article>
+
+        </div>
+
+        <div class="section-button">
+
+            <a
+                href="livres.html"
+                class="button button-primary">
+
+                Voir tous les livres
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="cta-banner">
+
+    <div class="cta-banner-inner">
+
+        <!-- Texte -->
+        <div class="cta-content">
+
+            <h3>
+                Vous êtes auteur·rice
+                neurodivergent·e?
+            </h3>
+
+            <div class="section-divider" aria-hidden="true">
+                <img
+                    src="assets/images/divider-star.png"
+                    alt=""
+                >
+            </div>
+
+            <p>
+
+                Nous croyons en votre voix.
+
+                Découvrez comment nous pouvons
+                vous accompagner à chaque étape
+                de votre parcours.
+
+            </p>
+
+            <a
+                href="soumettre.html"
+                class="button button-primary">
+
+                Soumettre mon manuscrit
+
+            </a>
+
+        </div>
+
+        <!-- Image -->
+        <div class="cta-image">
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+
+
+
+
+
+
+  </main>
+  <div data-include="components/footer.html"></div>
+  <!--
+    Le script est placé à la fin du body pour laisser le HTML
+    se charger avant l’exécution du JavaScript.
+  -->
+<script src="js/books.js"></script>
+<script src="js/book-modal.js"></script>
+<script src="js/includes.js"></script>
+  <!--================================================
+  POPUP LIVRE
+=================================================-->
+
+<div
+  class="book-modal"
+  id="book-modal"
+  aria-hidden="true"
+>
+
+  <!-- Fond sombre derrière la fenêtre -->
+  <div
+    class="book-modal-overlay"
+    data-close-book-modal
+  ></div>
+
+
+  <!-- Fenêtre -->
+  <div
+    class="book-modal-window"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="book-modal-title"
+  >
+
+    <!-- Fermer -->
+    <button
+      class="book-modal-close"
+      type="button"
+      aria-label="Fermer"
+      data-close-book-modal
+    >
+      ×
+    </button>
+
+
+    <div class="book-modal-layout">
+
+      <!-- Couverture -->
+      <div class="book-modal-cover">
+
+        <img
+          id="book-modal-image"
+          src=""
+          alt=""
+        >
+
+      </div>
+
+
+      <!-- Informations -->
+      <div class="book-modal-content">
+
+        <p
+          class="book-modal-genre"
+          id="book-modal-genre"
+        ></p>
+
+        <h2 id="book-modal-title"></h2>
+
+        <p
+          class="book-modal-author"
+          id="book-modal-author"
+        ></p>
+
+<!-- Choix de la langue du livre -->
+<div
+  class="book-language-switch"
+  id="book-language-switch"
+  aria-label="Choisir la langue du livre"
+>
+  <button
+    type="button"
+    data-book-language="en"
+  >
+    English
+  </button>
+
+  <button
+    type="button"
+    data-book-language="fr"
+  >
+    Français
+  </button>
+</div>
+
+
+
+
+        <div
+          class="section-divider book-modal-divider"
+          aria-hidden="true"
+        >
+          <img
+            src="assets/images/decorations/divider-star.svg"
+            alt=""
+          >
+        </div>
+
+
+        <div
+          class="book-modal-summary"
+          id="book-modal-summary"
+        ></div>
+
+
+        <!-- Infos techniques -->
+        <div class="book-details">
+
+          <p>
+            <strong>Pages</strong>
+            <span id="book-modal-pages"></span>
+          </p>
+
+          <p>
+            <strong>Publication</strong>
+            <span id="book-modal-publication"></span>
+          </p>
+
+          <p>
+            <strong>ISBN</strong>
+            <span id="book-modal-isbn"></span>
+          </p>
+
+        </div>
+
+
+        <div class="book-modal-actions">
+
+          <button
+            class="button button-secondary"
+            id="book-excerpt-button"
+            type="button"
+          >
+            Lire un extrait
+          </button>
+
+          <a
+            class="button button-primary"
+            id="book-buy-button"
+            href="#"
+          >
+            Acheter
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- Extrait -->
+    <div
+      class="book-excerpt"
+      id="book-excerpt"
+      hidden
+    >
+
+      <button
+        class="book-excerpt-back"
+        id="book-excerpt-back"
+        type="button"
+      >
+        ← Retour au livre
+      </button>
+
+      <h2>
+        Extrait
+      </h2>
+
+      <div id="book-excerpt-content"></div>
+
+    </div>
+
+  </div>
+
+</div>
+
+</body>
+
+</html>

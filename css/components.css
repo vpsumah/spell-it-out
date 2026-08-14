@@ -1,0 +1,1089 @@
+/*==================================================
+  HEADER
+==================================================*/
+
+.site-header {
+  position: relative; /* Sert de repère pour le menu mobile */
+  z-index: 100; /* Garde le header devant les autres sections */
+
+  background: var(--color-background); /* Fond gris pâle du header */
+  border-bottom: 1px solid var(--color-border); /* Ligne discrète sous le header */
+}
+
+
+/* Contient le logo, la navigation et les réseaux sociaux */
+.header-inner {
+  display: flex; /* Place les éléments sur une même ligne */
+  align-items: center; /* Centre les éléments verticalement */
+  gap: 2.5rem; /* Espace entre les groupes */
+
+  min-height: 130px; /* Hauteur minimale du header */
+}
+
+
+/*==================================================
+  LOGO
+==================================================*/
+
+.site-logo {
+  display: block;
+  flex-shrink: 0; /* Empêche le logo de rapetisser */
+}
+
+
+.site-logo img {
+  width: auto; /* Conserve les proportions du logo */
+  height: 105px; /* Contrôle la hauteur du logo */
+}
+
+
+/*==================================================
+  NAVIGATION
+==================================================*/
+
+.main-navigation {
+  display: flex; /* Place les liens sur une ligne */
+  align-items: center;
+  justify-content: center;
+  gap: 2.1rem; /* Espace entre les liens */
+
+  margin-left: auto; /* Pousse la navigation après le logo */
+}
+
+
+.main-navigation a {
+  position: relative; /* Permet de placer le trait actif sous le lien */
+
+  padding-block: 0.6rem; /* Agrandit la zone cliquable */
+
+  color: var(--color-text);
+  text-decoration: none;
+
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.035em;
+  text-transform: uppercase;
+
+  white-space: nowrap; /* Empêche un lien de passer sur deux lignes */
+
+  transition:
+    color var(--transition-normal);
+}
+
+
+/* Couleur du lien au survol et au clavier */
+.main-navigation a:hover,
+.main-navigation a:focus-visible {
+  color: var(--color-accent);
+}
+
+
+/* Trait sous le lien de la page actuelle */
+.main-navigation a::after {
+  content: "";
+
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  height: 2px;
+
+  background: var(--color-accent);
+
+  transform: scaleX(0); /* Cache le trait normalement */
+  transform-origin: center;
+
+  transition:
+    transform var(--transition-normal);
+}
+
+
+/* Affiche le trait sous le lien actif */
+.main-navigation a.active::after,
+.main-navigation a:hover::after,
+.main-navigation a:focus-visible::after {
+  transform: scaleX(1);
+}
+
+
+/* Le lien de la page actuelle utilise la couleur d’accent */
+.main-navigation a.active {
+  color: var(--color-accent);
+}
+
+
+/*==================================================
+  RÉSEAUX SOCIAUX
+==================================================*/
+
+.header-socials {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  flex-shrink: 0; /* Empêche les icônes de rapetisser */
+}
+
+
+.header-socials a {
+  display: grid;
+  place-items: center;
+
+  width: 24px;
+  height: 24px;
+
+  color: var(--color-text);
+
+  transition:
+    color var(--transition-normal),
+    transform var(--transition-normal);
+}
+
+
+.header-socials a:hover,
+.header-socials a:focus-visible {
+  color: var(--color-accent);
+  transform: translateY(-2px); /* Fait monter légèrement l’icône */
+}
+
+
+.header-socials svg {
+  width: 20px;
+  height: 20px;
+
+  fill: currentColor; /* Facebook est rempli */
+  stroke: currentColor;
+  stroke-width: 1.8;
+}
+
+
+/* Instagram ne doit pas être rempli au complet */
+.header-socials a:last-child svg {
+  fill: none;
+}
+
+
+/* Remplit seulement le petit cercle d’Instagram */
+.header-socials .icon-fill {
+  fill: currentColor;
+  stroke: none;
+}
+
+
+/*==================================================
+  BOUTON MOBILE
+==================================================*/
+
+.mobile-menu-button {
+  display: none; /* Caché sur les grands écrans */
+
+  width: 42px;
+  height: 42px;
+  padding: 7px;
+
+  border: 0;
+  background: transparent;
+
+  cursor: pointer;
+}
+
+
+/* Les trois lignes du bouton hamburger */
+.mobile-menu-button span {
+  display: block;
+
+  width: 27px;
+  height: 2px;
+  margin-block: 6px;
+
+  background: var(--color-text);
+
+  transition:
+    transform var(--transition-normal),
+    opacity var(--transition-normal);
+}
+
+
+/* Transforme la première ligne en diagonale */
+.mobile-menu-button.is-open span:nth-child(1) {
+  transform: translateY(8px) rotate(45deg);
+}
+
+
+/* Cache la ligne du milieu */
+.mobile-menu-button.is-open span:nth-child(2) {
+  opacity: 0;
+}
+
+
+/* Transforme la troisième ligne en diagonale */
+.mobile-menu-button.is-open span:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg);
+}
+
+
+/*==================================================
+  TABLETTES
+==================================================*/
+
+@media (max-width: 1050px) {
+  .header-inner {
+    gap: 1.5rem;
+  }
+
+  .main-navigation {
+    gap: 1.2rem;
+  }
+
+  .main-navigation a {
+    font-size: 0.69rem;
+  }
+
+  .site-logo img {
+    height: 90px;
+  }
+}
+
+
+/*==================================================
+  MENU MOBILE
+==================================================*/
+
+@media (max-width: 850px) {
+  .header-inner {
+    justify-content: space-between;
+    min-height: 95px;
+  }
+
+  .site-logo img {
+    height: 78px; /* Logo légèrement plus petit sur téléphone */
+  }
+
+  .mobile-menu-button {
+    display: block; /* Affiche le bouton hamburger */
+    margin-left: auto;
+  }
+
+  .main-navigation {
+    display: none; /* Cache le menu tant qu’il n’est pas ouvert */
+
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+
+    margin: 0;
+    padding: 1rem var(--page-padding) 1.5rem;
+
+    background: var(--color-background);
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  /* Le JavaScript ajoute cette classe lorsque le menu est ouvert */
+  .main-navigation.is-open {
+    display: flex;
+  }
+
+  .main-navigation a {
+    padding: 0.9rem 0;
+
+    font-size: 0.8rem;
+    text-align: center;
+
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .main-navigation a:last-child {
+    border-bottom: 0;
+  }
+
+  .main-navigation a::after {
+    bottom: 5px;
+  }
+
+  .header-socials {
+    display: none; /* Cache temporairement les réseaux sur mobile */
+  }
+}
+
+
+
+/*==================================================
+BUTTONS
+==================================================*/
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  min-height: 48px;
+  padding: 0.9rem 1.5rem;
+
+  border: 1px solid transparent;
+
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  cursor: pointer;
+
+  transition:
+    background var(--transition-normal),
+    color var(--transition-normal),
+    border-color var(--transition-normal),
+    transform var(--transition-normal);
+}
+
+
+/* Bouton bleu marin */
+.button-primary {
+  color: var(--color-text-light);
+  background: var(--color-navy);
+  border-color: var(--color-navy);
+}
+
+
+/* Effet au survol */
+.button-primary:hover,
+.button-primary:focus-visible {
+  color: var(--color-navy);
+  background: transparent;
+  transform: translateY(-2px);
+}
+
+/*==================================================
+  BOOK MODAL
+  Popup affichant les informations d'un livre
+==================================================*/
+
+/* Empêche la page derrière de défiler */
+body.modal-open {
+  overflow: hidden;
+}
+
+
+/* Conteneur général de la popup */
+.book-modal {
+  position: fixed;
+  inset: 0;
+
+  z-index: 1000;
+
+  display: none; /* Cachée normalement */
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 2rem;
+}
+
+
+/* Affiche la popup */
+.book-modal.is-open {
+  display: flex;
+}
+
+
+/* Fond sombre derrière la fenêtre */
+.book-modal-overlay {
+  position: absolute;
+  inset: 0;
+
+  background: rgba(10, 20, 25, 0.72);
+
+  backdrop-filter: blur(4px);
+}
+
+
+/* Fenêtre principale */
+.book-modal-window {
+  position: relative;
+  z-index: 1;
+
+  width: min(1000px, 100%);
+  max-height: 90vh;
+
+  overflow-y: auto;
+
+  background: var(--color-background);
+
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+}
+
+
+/* Bouton X */
+.book-modal-close {
+  position: absolute;
+
+  top: 1rem;
+  right: 1.25rem;
+
+  z-index: 5;
+
+  border: 0;
+  background: transparent;
+
+  color: var(--color-text);
+
+  font-size: 2rem;
+  line-height: 1;
+
+  cursor: pointer;
+}
+
+
+/* Deux colonnes : couverture + informations */
+.book-modal-layout {
+  display: grid;
+
+  grid-template-columns:
+    minmax(280px, 38%)
+    1fr;
+
+  min-height: 580px;
+}
+
+
+/* Zone de la couverture */
+.book-modal-cover {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  padding: 4rem 3rem;
+
+  background: var(--color-navy);
+
+  background-image:
+    url("../assets/images/backgrounds/navy-noise.webp");
+
+  background-repeat: repeat;
+}
+
+
+/* Couverture */
+.book-modal-cover img {
+  display: block;
+
+  width: 100%;
+  max-width: 260px;
+
+  height: auto;
+
+  box-shadow:
+    0 15px 35px rgba(0, 0, 0, 0.28);
+}
+
+
+/* Partie texte */
+.book-modal-content {
+  padding: 4rem;
+}
+
+
+/* Genre */
+.book-modal-genre {
+  margin: 0 0 0.75rem;
+
+  color: var(--color-accent);
+
+  font-size: 0.8rem;
+  font-weight: 600;
+
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+
+/* Titre */
+.book-modal-content h2 {
+  margin-bottom: 0.4rem;
+}
+
+
+/* Auteur */
+.book-modal-author {
+  margin-top: 0;
+
+  color: var(--color-muted);
+}
+
+
+/* Le séparateur reste aligné à gauche */
+.book-modal-divider {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+
+/* Résumé */
+.book-modal-summary {
+  max-width: 560px;
+
+  margin-bottom: 2rem;
+}
+
+
+/*==================================================
+  INFORMATIONS DU LIVRE
+==================================================*/
+
+.book-details {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 1rem;
+
+  margin-block: 2rem;
+
+  padding-block: 1.5rem;
+
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
+
+.book-details p {
+  margin: 0;
+}
+
+
+.book-details strong {
+  display: block;
+
+  margin-bottom: 0.25rem;
+
+  font-size: 0.75rem;
+
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+
+.book-details span {
+  color: var(--color-muted);
+}
+
+
+/*==================================================
+  BOUTONS
+==================================================*/
+
+.book-modal-actions {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 1rem;
+
+  margin-top: 2rem;
+}
+
+
+/* Variante claire du bouton */
+.button-secondary {
+  color: var(--color-navy);
+
+  background: transparent;
+
+  border-color: var(--color-navy);
+}
+
+
+.button-secondary:hover,
+.button-secondary:focus-visible {
+  color: var(--color-text-light);
+
+  background: var(--color-navy);
+}
+
+
+/*==================================================
+  EXTRAIT
+==================================================*/
+
+.book-excerpt {
+  padding: 4rem;
+
+  max-width: 800px;
+
+  margin-inline: auto;
+}
+
+
+.book-excerpt-back {
+  margin-bottom: 2rem;
+
+  padding: 0;
+
+  border: 0;
+  background: transparent;
+
+  color: var(--color-accent);
+
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+
+.book-excerpt h2 {
+  margin-bottom: 2rem;
+}
+
+
+#book-excerpt-content {
+  line-height: 1.9;
+}
+
+
+/*==================================================
+  CARTE LIVRE CLIQUABLE
+==================================================*/
+
+.book-card-button {
+  display: block;
+
+  margin-inline: auto;
+  padding: 0;
+
+  border: 0;
+  background: transparent;
+
+  cursor: pointer;
+}
+
+
+/*==================================================
+  TABLETTE
+==================================================*/
+
+@media (max-width: 800px) {
+
+  .book-modal {
+    padding: 1rem;
+  }
+
+
+  .book-modal-layout {
+    grid-template-columns: 1fr;
+  }
+
+
+  .book-modal-cover {
+    padding: 3rem;
+
+    min-height: 360px;
+  }
+
+
+  .book-modal-cover img {
+    max-width: 200px;
+  }
+
+
+  .book-modal-content {
+    padding: 3rem;
+  }
+
+}
+
+
+/*==================================================
+  MOBILE
+==================================================*/
+
+@media (max-width: 550px) {
+
+  .book-modal {
+    padding: 0;
+  }
+
+
+  .book-modal-window {
+    width: 100%;
+    height: 100%;
+    max-height: none;
+  }
+
+
+  .book-modal-content {
+    padding: 2rem;
+  }
+
+
+  .book-details {
+    grid-template-columns: 1fr;
+  }
+
+
+  .book-excerpt {
+    padding: 2rem;
+  }
+
+}
+
+/*==================================================
+  CHOIX DE LANGUE DU LIVRE
+==================================================*/
+
+.book-language-switch {
+  display: flex; /* Place les langues côte à côte */
+  gap: 0.5rem;
+
+  margin-top: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+
+/* Bouton de langue */
+.book-language-switch button {
+  padding: 0.55rem 0.9rem;
+
+  border: 1px solid var(--color-border);
+  background: transparent;
+
+  color: var(--color-text);
+
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+
+  cursor: pointer;
+
+  transition:
+    background var(--transition-normal),
+    color var(--transition-normal),
+    border-color var(--transition-normal);
+}
+
+
+/* Survol */
+.book-language-switch button:hover {
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+}
+
+
+/* Langue actuellement sélectionnée */
+.book-language-switch button.is-active {
+  color: white;
+  background: var(--color-navy);
+  border-color: var(--color-navy);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*==================================================
+  FOOTER
+==================================================*/
+
+.site-footer {
+
+    padding-top:2.5rem;   /* avant : 4rem */
+
+    color: var(--color-text-light);
+
+    background-color: var(--color-navy);
+
+    background-image: url("../assets/images/backgrounds/navy-noise.webp");
+    background-repeat: repeat;
+}
+
+
+/*==================================================
+  GRILLE PRINCIPALE
+==================================================*/
+
+.footer-grid{
+
+    display:grid;
+
+    grid-template-columns:
+        1.6fr
+        1fr
+        1fr
+        1fr;
+
+    gap:2.5rem;   /* avant : 4rem */
+
+    padding-bottom:2rem;
+
+    align-items:start;
+}
+
+/*==================================================
+  LOGO
+==================================================*/
+
+.footer-brand img {
+
+    width:140px;   /* avant : 240px */
+
+    margin-bottom:1rem;
+
+}
+
+.footer-brand p {
+
+    color: rgba(255,255,255,.75);
+
+}
+
+
+/*==================================================
+  TITRES
+==================================================*/
+
+.site-footer h4 {
+
+    margin-bottom: 1.25rem;
+
+    font-size: 1.2rem;
+
+    color: white;
+
+    text-transform: uppercase;
+
+    letter-spacing: .08em;
+
+}
+
+
+/*==================================================
+  LISTES
+==================================================*/
+
+.footer-nav ul {
+
+    list-style: none;
+
+    padding: 0;
+    margin: 0;
+
+}
+
+.footer-nav li {
+
+    margin-bottom:.45rem;   /* avant : .75rem */
+
+}
+
+
+/*==================================================
+  LIENS
+==================================================*/
+
+.site-footer a {
+
+    color: rgba(255,255,255,.82);
+
+    text-decoration: none;
+
+    transition: color .25s;
+
+}
+
+.site-footer a:hover {
+
+    color: var(--color-accent);
+
+}
+
+
+/*==================================================
+  RÉSEAUX SOCIAUX
+==================================================*/
+
+.footer-social {
+
+    display: flex;
+
+    gap: 1rem;
+
+    margin-bottom:1rem;   /* avant : 2rem */
+
+}
+
+.footer-social a {
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    width: 42px;
+    height: 42px;
+
+    border-radius: 50%;
+
+    background: rgba(255,255,255,.08);
+
+    transition: .25s;
+
+}
+
+.footer-social a:hover {
+
+    background: var(--color-accent);
+
+    color: white;
+
+}
+
+.footer-social svg {
+
+    width: 20px;
+    height: 20px;
+
+}
+
+
+/*==================================================
+  CONTACT
+==================================================*/
+
+.footer-contact p {
+
+    margin-bottom: .75rem;
+
+    color: rgba(255,255,255,.75);
+
+}
+
+
+/*==================================================
+  BAS DU FOOTER
+==================================================*/
+
+.footer-bottom {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 2rem;
+
+    padding-block:1.25rem;   /* avant : 2rem */
+
+    border-top: 1px solid rgba(255,255,255,.12);
+
+}
+
+
+/* Copyright */
+
+.footer-bottom p {
+
+    margin: 0;
+
+    color: rgba(255,255,255,.65);
+
+}
+
+
+/*==================================================
+  LIENS LÉGAUX
+==================================================*/
+
+.footer-legal {
+
+    display: flex;
+
+    gap: 2rem;
+
+}
+
+
+/*==================================================
+  TABLETTE
+==================================================*/
+
+@media (max-width: 900px) {
+
+    .footer-grid {
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+        gap: 3rem;
+
+    }
+
+    .footer-bottom {
+
+        flex-direction: column;
+
+        text-align: center;
+
+    }
+
+}
+
+
+/*==================================================
+  MOBILE
+==================================================*/
+
+@media (max-width: 600px) {
+
+    .footer-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+    .footer-brand {
+
+        text-align: center;
+
+    }
+
+    .footer-brand img {
+
+        margin-inline: auto;
+
+    }
+
+    .footer-social {
+
+        justify-content: center;
+
+    }
+
+    .footer-legal {
+
+        flex-direction: column;
+
+        gap: .75rem;
+
+    }
+
+}

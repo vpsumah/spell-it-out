@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+
+  <!-- Permet au site de bien s’adapter aux téléphones -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Description utilisée par Google et les réseaux sociaux -->
+  <meta
+    name="description"
+    content="Éditions Spell It Out accompagne les auteur·rice·s neurodivergent·e·s dans leur parcours littéraire."
+  >
+
+  <title>Éditions Spell It Out</title>
+
+  <!-- Fichier CSS principal -->
+  <link rel="stylesheet" href="./css/styles.css">
+</head>
+
+<body>
+
+  <!--
+    Le contenu de components/header.html sera inséré ici
+    automatiquement par includes.js.
+  -->
+  <div data-include="components/header.html"></div>
+
+  <!-- Le contenu principal de l’accueil sera ajouté ici -->
+  <main id="main-content">
+
+<!--================================================
+      AUTEUR - HERO
+    =================================================-->
+
+    <section class="author-profile-hero">
+
+      <div class="container author-profile-grid">
+
+
+        <!-- Portrait -->
+
+        <div class="author-profile-portrait">
+
+          <img
+            id="author-profile-image"
+            src=""
+            alt=""
+          >
+
+        </div>
+
+
+        <!-- Informations -->
+
+        <div class="author-profile-info">
+
+          <a
+            class="author-back-link"
+            href="auteurs.html"
+          >
+            ← Tous les auteur·rice·s
+          </a>
+
+
+          <h1 id="author-profile-name"></h1>
+
+
+          <div
+            class="section-divider author-profile-divider"
+            aria-hidden="true"
+          >
+            <img
+              src="assets/images/divider-star.png"
+              alt=""
+            >
+          </div>
+
+
+          <p
+            class="author-profile-role"
+            id="author-profile-role"
+          ></p>
+
+
+          <span
+            class="author-status"
+            id="author-profile-status"
+          ></span>
+
+
+          <div
+            class="author-profile-bio"
+            id="author-profile-bio"
+          ></div>
+
+        </div>
+
+
+        <!-- Illustration décorative -->
+
+        <div
+          class="author-profile-decoration"
+          aria-hidden="true"
+        ></div>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!--================================================
+      LIVRES DE L'AUTEUR
+    =================================================-->
+
+    <section
+      class="author-books-band"
+      id="author-books-section"
+    >
+
+      <div class="container">
+
+        <header class="section-heading author-books-heading">
+
+          <h2>Ses livres</h2>
+
+          <div
+            class="section-divider"
+            aria-hidden="true"
+          >
+            <img
+              src="assets/images/divider-star.png"
+              alt=""
+            >
+          </div>
+
+        </header>
+
+
+        <div
+          class="author-books-grid"
+          id="author-books-grid"
+        ></div>
+
+
+        <!-- Utilisé si aucun livre n'est encore publié -->
+
+        <div
+          class="author-books-empty"
+          id="author-books-empty"
+          hidden
+        >
+          <p>
+            Premier projet à paraître prochainement.
+          </p>
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!--================================================
+      UNIVERS + THÈMES
+    =================================================-->
+
+    <section class="author-universe">
+
+      <div class="container author-universe-grid">
+
+
+        <!-- Univers -->
+
+        <div class="author-universe-content">
+
+          <h2>Son univers</h2>
+
+          <div
+            class="section-divider"
+            aria-hidden="true"
+          >
+            <img
+              src="assets/images/divider-star.png"
+              alt=""
+            >
+          </div>
+
+          <div id="author-universe-text"></div>
+
+        </div>
+
+
+        <!-- Thèmes -->
+
+        <div class="author-themes">
+
+          <h2>Ses thèmes de prédilection</h2>
+
+          <div
+            class="section-divider"
+            aria-hidden="true"
+          >
+            <img
+              src="assets/images/divider-star.png"
+              alt=""
+            >
+          </div>
+
+
+          <div
+            class="author-themes-grid"
+            id="author-themes-grid"
+          ></div>
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!--================================================
+      CITATION
+    =================================================-->
+
+    <section class="author-quote-section">
+
+      <div class="container author-quote-content">
+
+        <span
+          class="author-quote-mark"
+          aria-hidden="true"
+        >
+          “
+        </span>
+
+        <blockquote id="author-quote"></blockquote>
+
+        <p id="author-quote-name"></p>
+
+      </div>
+
+    </section>
+
+
+
+
+
+  </main>
+  <div data-include="components/footer.html"></div>
+  <!--
+    Le script est placé à la fin du body pour laisser le HTML
+    se charger avant l’exécution du JavaScript.
+  -->
+<script src="js/books.js"></script>
+<script src="js/authors.js"></script>
+<script src="js/author-page.js"></script>
+<script src="js/includes.js"></script>
+  
+</body>
+
+</html>
