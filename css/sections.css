@@ -4050,3 +4050,217 @@ body.article-modal-open {
   }
 
 }
+
+/*==================================================
+  PAGES LÉGALES
+  Mentions légales + Confidentialité
+==================================================*/
+
+
+/*==================================================
+  HERO
+==================================================*/
+
+.legal-hero {
+  padding-block: 5rem;
+
+  text-align: center;
+
+  border-bottom:
+    1px solid var(--color-border);
+}
+
+
+.legal-hero-content {
+  max-width: 850px;
+
+  margin-inline: auto;
+}
+
+
+.legal-eyebrow {
+  margin-bottom: 1rem;
+
+  color: var(--color-accent);
+
+  font-size: 0.75rem;
+  font-weight: 600;
+
+  letter-spacing: 0.12em;
+}
+
+
+.legal-hero h1 {
+  margin-bottom: 0;
+
+  font-size:
+    clamp(2.5rem, 4vw, 4rem);
+}
+
+
+/* Centre le séparateur */
+.legal-hero .section-divider {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.legal-hero-content > p:last-child {
+  max-width: 650px;
+
+  margin-inline: auto;
+
+  line-height: 1.7;
+}
+
+
+
+/*==================================================
+  CONTENU
+==================================================*/
+
+.legal-section {
+  padding-block: 5rem;
+}
+
+
+.legal-container {
+  max-width: 900px;
+}
+
+
+/* Chaque partie */
+.legal-block {
+  padding-block: 2rem;
+
+  border-bottom:
+    1px solid var(--color-border);
+}
+
+
+.legal-block:first-child {
+  padding-top: 0;
+}
+
+
+.legal-block h2 {
+  margin:
+    0 0 1rem;
+
+  font-size: 1.65rem;
+}
+
+
+.legal-block p {
+  margin:
+    0 0 0.9rem;
+
+  line-height: 1.75;
+}
+
+
+.legal-block p:last-child {
+  margin-bottom: 0;
+}
+
+
+/* Listes */
+.legal-block ul {
+  margin:
+    1rem 0 0;
+
+  padding-left:
+    1.4rem;
+}
+
+
+.legal-block li {
+  margin-bottom:
+    0.6rem;
+
+  line-height:
+    1.6;
+}
+
+
+/* Liens */
+.legal-block a {
+  color:
+    var(--color-accent);
+
+  text-decoration:
+    underline;
+}
+
+
+.legal-block a:hover {
+  color:
+    var(--color-navy);
+}
+
+
+
+/*==================================================
+  RESPONSABLE CONFIDENTIALITÉ
+==================================================*/
+
+.legal-responsible {
+  margin-block:
+    2rem;
+
+  padding:
+    2rem;
+
+  border:
+    1px solid var(--color-border);
+
+  background:
+    rgba(17, 153, 189, 0.04);
+}
+
+
+
+/*==================================================
+  DATE DE MISE À JOUR
+==================================================*/
+
+.legal-update {
+  margin-top:
+    3rem;
+
+  color:
+    var(--color-muted);
+
+  font-size:
+    0.8rem;
+
+  text-align:
+    center;
+}
+
+
+
+/*==================================================
+  MOBILE
+==================================================*/
+
+@media (max-width: 600px) {
+
+  .legal-hero {
+    padding-block:
+      3.5rem;
+  }
+
+
+  .legal-section {
+    padding-block:
+      3.5rem;
+  }
+
+
+  .legal-responsible {
+    padding:
+      1.5rem;
+  }
+
+}
